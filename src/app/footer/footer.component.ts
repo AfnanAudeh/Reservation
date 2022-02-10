@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IndexService } from '../services/index.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+footerArr:any=[]
+  constructor(private indexService: IndexService) { }
 
   ngOnInit(): void {
+this.indexService.GetFooterH().subscribe(
+  result=>{this.footerArr=result
+  
+  }
+);
   }
 
 }

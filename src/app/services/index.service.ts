@@ -7,13 +7,19 @@ import { Injectable } from '@angular/core';
 export class IndexService {
 
   constructor(private http :HttpClient) { }
-
-  getHeader()
+header:any=[];
+  GetHeader()
   {
-    return this.http.get('https://localhost:44343/api/header/GetHeader').subscribe(
-      (result: any) => { console.log(result);
-       },
-      err => { console.log(err) }
-    );
+    return this.http.get<any>('https://localhost:44343/api/header/GetHeader'); 
   }
+
+GetFooter()
+{
+  return this.http.get<any>('https://localhost:44343/api/footer/GetFooter'); 
+}
+GetFooterH()
+{
+  return this.http.get<any>('https://localhost:44343/api/footer/GetFooterHeader'); 
+}
+
 }
