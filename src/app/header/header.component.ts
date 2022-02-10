@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IndexService } from '../services/index.service';
+
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+@Input () Header_Id :number|undefined;
+@Input() Logo_Image : string|undefined;
+@Input () Project_name : string | undefined;
+  constructor(private indexService : IndexService) { }
 
   ngOnInit(): void {
+    this.indexService.getHeader();
   }
 
+  
 }
