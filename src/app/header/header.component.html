@@ -3,8 +3,8 @@
     <div class="container d-flex justify-content-center justify-content-md-between">
 
         <div class="contact-info d-flex align-items-center">
-            <i class="bi bi-phone d-flex align-items-center"><span>{{headerArr[0].phone}}</span></i>
-            <i class="bi bi-clock d-flex align-items-center ms-4"><span> {{headerArr[0].openinG_DAYS}} : {{headerArr[0].openinG_HOURS}}</span></i>
+            <i class="bi bi-phone d-flex align-items-center"><span>{{headerArr[0]?.phone}}</span></i>
+            <i class="bi bi-clock d-flex align-items-center ms-4"><span> {{headerArr[0]?.openinG_DAYS}} : {{headerArr[0]?.openinG_HOURS}}</span></i>
         </div>
 
 
@@ -16,7 +16,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
         <h1 class="logo me-auto me-lg-0">
-            <a>{{headerArr[0].project_Name}}</a>
+            <a>{{headerArr[0]?.project_Name}}</a>
         </h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->

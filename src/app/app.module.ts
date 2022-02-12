@@ -7,7 +7,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndexService } from './services/index.service';
 import { SharedModule } from './shared/shared.module';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { RouterModule } from '@angular/router';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,9 +20,14 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule
   ],
+  exports:[MatDialogModule,MatFormFieldModule],
   providers: [IndexService],
   bootstrap: [AppComponent]
 })

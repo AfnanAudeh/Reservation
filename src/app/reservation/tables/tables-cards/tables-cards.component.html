@@ -1,0 +1,20 @@
+<div class="cards-container">
+    <mat-card class="table-card">
+        <mat-card-header>
+            <mat-card-title>Table NO. {{table_Id}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+        <mat-card-content>
+            <p>
+                {{details}}
+            </p>
+            <p>Max person :{{max_Person}}
+
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="openDialog()">View Table</button>
+            <button mat-button (click)="openReserveDialog()">Reserve Table</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

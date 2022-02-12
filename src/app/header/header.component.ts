@@ -24,10 +24,10 @@ headerArr:any=[];
     this.indexService.GetHeader().subscribe(
       result=>{
         this.headerArr=result;
-        console.log(this.headerArr);
       }
     );
    }
+   
    BookTable()
    {
     this.router.navigate(['reservation/table']);

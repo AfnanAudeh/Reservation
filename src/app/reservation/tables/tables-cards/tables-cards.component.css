@@ -1,0 +1,12 @@
+.table-card {
+    width: 350px;
+    height: 400px;
+}
+
+.cards-container {
+    margin-top: 3cm;
+    margin-right: 1cm;
+    margin-left: 1cm;
+    margin-bottom: 3cm;
+    display: inline-block;
+}
