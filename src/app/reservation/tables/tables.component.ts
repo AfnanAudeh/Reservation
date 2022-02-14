@@ -1,7 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IndexService } from 'src/app/services/index.service';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { TableClass } from 'src/app/shared/table-class.model';
+import { TableServiceService } from 'src/app/services/table-service.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { FormControl } from '@angular/forms';
+
 @Component({
   selector: 'app-tables',
   templateUrl: './tables.component.html',
@@ -10,15 +13,24 @@ import { TableClass } from 'src/app/shared/table-class.model';
 export class TablesComponent implements OnInit {
 
   tables!: TableClass[];
-  constructor(private indexService : IndexService,public dialog: MatDialog) { }
+  chairs = new FormControl('');
+  constructor(private tableService: TableServiceService, public dialog: MatDialog,private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
-    this.indexService.GetTables().subscribe(result=>{this.tables=result  
-    } );
+    this.spinner.show();
+    this.tableService.GetTables().subscribe(result => {
+      this.tables = result
+      this.spinner.hide();
+    });
     
-    
-  }
 
-}
+  }
+  FilterByCairs(chairs : number)
+  {
+    let noOfChairs=this.chairs.value;
+    debugger
+    this.tableService.FilterByNumberOfChairs(noOfChairs);
+  }
+  }
 
 

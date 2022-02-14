@@ -12,24 +12,24 @@ import { TablesComponent } from '../tables.component';
   styleUrls: ['./tables-cards.component.css']
 })
 export class TablesCardsComponent implements OnInit {
-  @Input () table_Id:number |undefined;
-  @Input () max_Person :number |undefined;
-  @Input () details :string |undefined;
-  @Input () image_Location :string|undefined;
-  @Input () temproryReservations:string|undefined;
+  @Input() table_Id: number | undefined;
+  @Input() max_Person: number | undefined;
+  @Input() details: string | undefined;
+  @Input() image_Location: string | undefined;
+  @Input() temproryReservations: string | undefined;
 
-  @Input () tableData=new TableClass;
-  constructor(public dialog: MatDialog,public table:TablesComponent) { }
+  @Input() tableData = new TableClass;
+  constructor(public dialog: MatDialog, public table: TablesComponent) { }
 
   ngOnInit(): void {
- 
+
   }
-openDialog()
-{
-this.dialog.open(TableDialogComponent,{data:{TableData:this.tableData}});
-}
-openReserveDialog()
-{
-  this.dialog.open(ReserveDialogComponent,{data:{TableId:this.tableData.table_Id}});
-}
+
+  openDialog() {
+    this.dialog.open(TableDialogComponent, { data: { TableData: this.tableData } });
+  }
+  
+  openReserveDialog() {
+    this.dialog.open(ReserveDialogComponent, { data: { TableId: this.tableData.table_Id } });
+  }
 }

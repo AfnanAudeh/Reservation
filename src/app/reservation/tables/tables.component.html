@@ -1,6 +1,10 @@
+
 <div class="container ">
     <div class="cards">
         <app-tables-cards *ngFor="let card of tables" [tableData]="card" [table_Id]=" card.table_Id " [max_Person]="card.max_Person " [details]="card.details " [image_Location]="card.image_Location " [temproryReservations]="card.temproryReservations "></app-tables-cards>
 
     </div>
 </div>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#bf7207" type="pacman" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>

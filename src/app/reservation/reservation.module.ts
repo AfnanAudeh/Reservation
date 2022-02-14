@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared/shared.module';
 import { ReservationRoutingModule } from './reservation-routing.module';
 
 import {MatCardModule} from '@angular/material/card';
@@ -11,7 +10,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ReserveDialogComponent } from './tables/reserve-dialog/reserve-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { FormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
 @NgModule({
   declarations: [
     TablesComponent,
@@ -22,19 +22,22 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   imports: [
     CommonModule,
     ReservationRoutingModule,
-    SharedModule,
     MatCardModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule ,
+    NgxSpinnerModule
   ],
   exports:[ CommonModule,
     ReservationRoutingModule,
-    SharedModule,
     MatCardModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule,
+    TablesCardsComponent,
+    NgxSpinnerModule
   ],
     entryComponents:[TableDialogComponent,ReserveDialogComponent]
 })

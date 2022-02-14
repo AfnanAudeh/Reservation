@@ -30,7 +30,7 @@ headerArr:any=[];
    
    BookTable()
    {
-    this.router.navigate(['reservation/table']);
+    this.router.navigate(['reservation/tables']);
    }
   
 }

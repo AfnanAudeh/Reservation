@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {ReactiveFormsModule } from '@angular/forms';
+
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TableServiceService } from 'src/app/services/table-service.service';
 
 @Component({
   selector: 'app-reserve-dialog',
@@ -9,23 +10,30 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./reserve-dialog.component.css']
 })
 export class ReserveDialogComponent implements OnInit {
-  ReserveForm:FormGroup=new FormGroup({
-    table_Id:new FormControl('',Validators.required),
-    reservation_From:new FormControl('',Validators.required),
-    reservation_To:new FormControl('',Validators.required)
+  ReserveForm: FormGroup = new FormGroup({
+    table_Id: new FormControl('', Validators.required),
+    reservation_From: new FormControl('', Validators.required),
+    reservation_To: new FormControl('', Validators.required)
   });
-  tableId:number;
-  constructor(@Inject (MAT_DIALOG_DATA) public data:any) 
-  {
-    this.tableId=data.TableId;
-   }
+  tableId: number;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private tableService: TableServiceService) {
+    this.tableId = data.TableId;
+  }
 
   ngOnInit(): void {
-    console.log(this.tableId);
-    
-  }
-CreateReservetion()
-{
 
-}
+
+  }
+  CreateReservetion() {
+    const obj = {
+      table_Id: this.tableId,
+      customer_Id: 4,
+      reservation_From: this.ReserveForm.value.reservation_From.toString(),
+      reservation_To: this.ReserveForm.value.reservation_To.toString(),
+      res_Status: "PENDING"
+    }
+    console.log(obj);
+    this.tableService.ReserveTable(obj);
+
+  }
 }
