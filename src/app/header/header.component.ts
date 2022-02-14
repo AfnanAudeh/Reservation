@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IndexService } from '../services/index.service';
-
+// work
 
 @Component({
   selector: 'app-header',
