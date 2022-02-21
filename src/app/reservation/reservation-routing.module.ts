@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ReserveDialogComponent } from './tables/reserve-dialog/reserve-dialog.component';
 import { TablesComponent } from './tables/tables.component';
 
 

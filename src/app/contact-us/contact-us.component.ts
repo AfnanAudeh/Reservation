@@ -2,6 +2,7 @@ import { Component, OnInit, SecurityContext } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer} from '@angular/platform-browser';
 import { ContactUsServiceService } from '../services/contact-us-service.service';
+import { ContactusInfoService } from '../services/contactus-info.service';
 
 
 @Component({
@@ -12,8 +13,6 @@ import { ContactUsServiceService } from '../services/contact-us-service.service'
 export class ContactUsComponent implements OnInit {
   
   contactUsInfoArr?:any=[];
-  SafeMap;
-  map:string=this.contactUsInfoArr[0]?.site_Map;
   status?:boolean;
   ContactUsForm: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -25,13 +24,12 @@ export class ContactUsComponent implements OnInit {
 
 
 
-  constructor(private contactUsService:ContactUsServiceService,private sanitizer: DomSanitizer) 
+  constructor(private contactUsService:ContactUsServiceService,private sanitizer: DomSanitizer,private contactUsInfo :ContactusInfoService) 
   {
-    this.SafeMap=this.sanitizer.bypassSecurityTrustUrl(this.map);
   }
 
   ngOnInit(): void {
-    this.contactUsService.getContactUsInfo().subscribe(
+    this.contactUsInfo.getContactUsInfo().subscribe(
       result=>{this.contactUsInfoArr=result
         console.log(result);
       }

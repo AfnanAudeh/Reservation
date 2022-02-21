@@ -13,13 +13,16 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import{ NgxSpinnerModule } from 'ngx-spinner';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutUsComponent } from './about-us/about-us.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

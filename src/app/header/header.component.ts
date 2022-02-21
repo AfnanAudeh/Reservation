@@ -10,13 +10,7 @@ import { IndexService } from '../services/index.service';
 })
 
 export class HeaderComponent implements OnInit {
-  @Input () header_Id :number|undefined;
-  @Input() logo_Image : string|undefined;
-  @Input () project_Name : string | undefined;
-  @Input()  phone :string | undefined;
-  @Input() openinG_HOURS :string | undefined;
-  @Input() openinG_DAYS :string | undefined;
-
+ 
 headerArr:any=[];
   constructor(private indexService : IndexService, private router:Router) { }
 
@@ -32,5 +26,16 @@ headerArr:any=[];
    {
     this.router.navigate(['reservation/tables']);
    }
-  
+   Home()
+   {
+    this.router.navigate(['index']);
+   }
+   AboutUs()
+   {
+    this.router.navigate(['aboutus']);
+   }
+   ContactUs()
+   {
+    this.router.navigate(['contactus']);
+   }
 }

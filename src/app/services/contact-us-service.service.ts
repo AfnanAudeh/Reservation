@@ -27,18 +27,7 @@ export class ContactUsServiceService {
   {
     return this.http.get<ContactUsClass>('https://localhost:44343/api/contactUs/GetAllContactUs'); 
   }
-  UpdateContactUs(contactUs :ContactUsClass)
-  {
 
-  }
-  // *************************
-  getContactUsInfo()
-  {
-    return this.http.get<ContactUsInfoClass>('https://localhost:44343/api/contactUsInfo/GetContactUsInfo'); 
-  }
 
-  UpdateContactUsInfo(contactUsInfo :ContactUsInfoClass)
-  {
-
-  }
+  
 }
