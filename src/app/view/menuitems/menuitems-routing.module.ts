@@ -7,26 +7,26 @@ import { ShowMenuitemComponent } from './show-menuitem/show-menuitem.component';
 
 const routes: Routes = [
   {
-    path:'getlistmenuitem'
+    path: 'getlistmenuitem'
     ,
-    component:GetlistMenuitemComponent
+    component: GetlistMenuitemComponent
   }
 
-,
+  ,
   {
-path:'show/:id',
-component :ShowMenuitemComponent
+    path: 'show/:id',
+    component: ShowMenuitemComponent
   }
- ,
- {
-   path:'edit/:id'
-,
-component: EditMenuitemComponent
-   }
-   ,
+  ,
   {
-path:'add'
-,component:AddMenuitemComponent
+    path: 'edit/:id'
+    ,
+    component: EditMenuitemComponent
+  }
+  ,
+  {
+    path: 'add'
+    , component: AddMenuitemComponent
   }
 
 ];
