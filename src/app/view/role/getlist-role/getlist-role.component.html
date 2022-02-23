@@ -1,0 +1,31 @@
+<p>getlist-payment works!</p>
+<p>getlist-menu-category works!</p>
+
+
+<div style="display:flex; flex-direction: column;" >
+    <p>getlist-menuitem works!</p>
+  
+    <div  style="display: flex;
+    justify-self: center;
+    flex-direction: row;
+    justify-content: center;">
+        </div>
+      <button type="button" class="btn btn-primary" style="width: 100px;" routerLink='../add'>insert</button>
+    <table class="table table">
+    
+        <thead class="thead">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+         
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let item of list">
+            <td>{{item.id}}</td>
+            <td>{{item.role_Name}}</td>
+             <button type="button" class="btn btn-danger" (click)="DeleteRole(item.id)">delete</button>  
+          </tr>
+        </tbody>
+      </table>
+    </div>

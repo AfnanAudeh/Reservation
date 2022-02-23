@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { ContactUsClass } from '../shared/contact-us-class';
 import { ContactUsInfoClass } from '../shared/contact-us-info-class';
 
@@ -13,7 +14,7 @@ export class ContactUsServiceService {
   AddContactUs(contactUs :ContactUsClass)
   {
     debugger
-    return this.http.post<ContactUsClass>('https://localhost:44343/api/contactUs/AddContactUs',contactUs).subscribe(
+    return this.http.post<ContactUsClass>(environment.apiUrl+'contactUs/AddContactUs',contactUs).subscribe(
       result=>{return true
       },
       error=>{return false}
@@ -21,11 +22,11 @@ export class ContactUsServiceService {
   }
   GetContactUsBySubject(subject :string)
   {
-    return this.http.get<ContactUsClass>('https://localhost:44343/api/contactUs/GetContactUsBySubject/'+subject); 
+    return this.http.get<ContactUsClass>(environment.apiUrl+'contactUs/GetContactUsBySubject/'+subject); 
   }
   GetAllContactUs()
   {
-    return this.http.get<ContactUsClass>('https://localhost:44343/api/contactUs/GetAllContactUs'); 
+    return this.http.get<ContactUsClass>(environment.apiUrl+'contactUs/GetAllContactUs'); 
   }
 
 

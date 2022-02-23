@@ -1,0 +1,12 @@
+<p>edit-payment-method works!</p>
+
+<form [formGroup]='editPaymentMethod' (submit)="UpdatePaymentMethod()">
+
+    <mat-form-field>
+        <input matInput formControlName="name" style=
+        "font-size: x-large;" placeholder="name"
+        [(ngModel)]="this.list.payment_Method_Name"
+        >
+        </mat-form-field>
+           
+    <input type="submit" />

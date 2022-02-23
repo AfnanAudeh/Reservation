@@ -1,0 +1,17 @@
+#contact{
+    margin-top: 15px;
+    margin-left: 7cm;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#form-bg{
+    margin-left: 4cm;
+    margin-right: 4cm;
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+    background-color: beige;
+    opacity: .7;
+}
+#register label{
+    color: black;
+}

@@ -1,0 +1,21 @@
+<p>add-orderitem works!</p>
+
+<form [formGroup]='inserOrderItem' (submit)="InsertOrderItem()">
+
+    <mat-form-field>
+        <input matInput formControlName="price" style=
+        "font-size: x-large;" placeholder="price">
+        </mat-form-field>
+       
+    
+        <mat-form-field>
+            <input matInput formControlName="quantity" style=
+            "font-size: x-large;" placeholder="quantity">
+            </mat-form-field>
+            
+        <mat-form-field>
+            <input matInput formControlName="orderId" style=
+            "font-size: x-large;" placeholder="orderId">
+            </mat-form-field>
+           
+    <input type="submit" />

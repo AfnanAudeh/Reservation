@@ -1,0 +1,20 @@
+<p>edit-menuitem-review works!</p>
+
+<form [formGroup]='editMenuReview' (submit)="UpdateMenuCategory()">
+
+    <mat-form-field>
+        <input matInput formControlName="rating" style=
+        "font-size: x-large;" placeholder="rating"
+        [(ngModel)]="list.menu_Item_Rating"
+        >
+        </mat-form-field>
+       
+    
+        <mat-form-field>
+            <input matInput formControlName="content" style=
+            "font-size: x-large;" placeholder="content"
+            
+            [(ngModel)]="list.menu_Item_Content">
+            </mat-form-field>
+           
+    <input type="submit" />

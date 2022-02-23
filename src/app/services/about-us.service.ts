@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { AboutUsClass } from '../shared/about-us-class.model';
 
 @Injectable({
@@ -12,10 +13,10 @@ export class AboutUsService {
 
   UpdateAboutUs(aboutUs : any)
   {
-    return this.http.put('https://localhost:44343/api/aboutUs/UpdateAboutUs',aboutUs);
+    return this.http.put(environment.apiUrl +'aboutUs/UpdateAboutUs',aboutUs);
   }
   GetAboutUs()
   {
-    return this.http.get<AboutUsClass>('https://localhost:44343/api/aboutUs/GetAboutUs'); 
+    return this.http.get<AboutUsClass>(environment.apiUrl +'aboutUs/GetAboutUs'); 
   }
 }

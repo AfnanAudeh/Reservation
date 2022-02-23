@@ -1,0 +1,53 @@
+<p>getlist-cart-items works!</p>
+
+<div style="display:flex; flex-direction: column;" >
+   
+
+    <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let x of seasons; let i = index">
+            <mat-radio-button color="primary" [checked]="i ==defaultSelected" [value]="i" (change)="selection = $event.value">
+                Item {{x}}
+            </mat-radio-button>
+        </mat-list-item>
+    </mat-list>
+    <mat-card style="margin-top: 1rem">
+        Currently selected: {{selection}}
+    </mat-card>
+    
+    
+    
+    <mat-form-field>
+        <input matInput [formControl]="creditNumber"   style=
+        "font-size: x-large;" placeholder="creditNumber">
+        </mat-form-field>
+        <button type="button" class="btn btn-primary" (click)="RequestOrder()">request Order</button>  
+    
+    <div>Your favorite season is: {{favoriteSeason}}</div>
+    <div  style="display: flex;
+    justify-self: center;
+    flex-direction: row;
+    justify-content: center;">
+    </div>
+    <table class="table table">
+    
+        <thead class="thead">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">CartItemId</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Name</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let item of list">
+            <th scope="row"></th>
+            <td>{{item.cart_Item_Id}}</td>
+            <td>{{item.cart_Item_Price}}</td>
+            <td>{{item.cart_Item_Quantity}}</td>
+            <td>{{item.menu_Item_Name}}</td>
+            <button type="button" class="btn btn-danger" (click)="DeleteFromCartItemByCartItemId(item.cart_Item_Id)">delete</button>  
+          </tr>
+        </tbody>
+      </table>
+    </div>

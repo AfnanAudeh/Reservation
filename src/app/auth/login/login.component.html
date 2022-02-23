@@ -1,0 +1,40 @@
+<section id="form-bg">
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Login</h2>
+                    <p>Login</p>
+                </div>
+            </div>
+            <div class="row mt-9">
+
+                <div class="col-lg-12">
+                    <div class="col-lg-8 mt-5 mt-lg-0">
+                        <form class="php-email-form">
+                            <div class="form-group mt-3">
+                                <input type="email" class="form-control" matInput formControlName="email" name="email"
+                                    #email placeholder="Email" required>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <input type="password" class="form-control" matInput formControlName="password"
+                                    name="password" #password placeholder="password" required>
+                            </div>
+                            <br>
+                            <div class="text-center">
+                                <button type="submit" (click)="login()">Login</button>
+                            </div>
+                        </form>
+                        <div class="container">
+                            <div class="section-title" id="register">
+                             <label>Dont have Account?  </label>
+                             <a href="(['auth/register'])"><label>Register</label></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

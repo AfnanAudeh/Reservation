@@ -46,4 +46,8 @@ contactInfo:any=[];
    {
     this.router.navigate(['contactus']);
    }
+   Login()
+   {
+    this.router.navigate(['auth/login']);
+   }
 }

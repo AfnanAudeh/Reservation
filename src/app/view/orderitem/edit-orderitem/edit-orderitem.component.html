@@ -1,0 +1,20 @@
+<p>edit-orderitem works!</p>
+
+<form [formGroup]='editOrderItem' (submit)="UpdateOrderItem()">
+
+    <mat-form-field>
+        <input matInput formControlName="price" style=
+        "font-size: x-large;" placeholder="price"
+        [(ngModel)]="list.order_Item_Price"
+        >
+        </mat-form-field>
+       
+    
+        <mat-form-field>
+            <input matInput formControlName="quantity" style=
+            "font-size: x-large;" placeholder="quantity"
+            [(ngModel)]="list.order_Item_Quantity"
+            >
+            </mat-form-field>
+           
+    <input type="submit" />

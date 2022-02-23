@@ -1,29 +1,29 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BaseService } from './base.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class IndexService extends BaseService {
+export class IndexService{
 
   constructor(private http: HttpClient) {
-    super();
+    
   }
 
   GetHeader() {
-    return this.http.get<any>('https://localhost:44343/api/header/GetHeader');
+    return this.http.get<any>(environment.apiUrl+'header/GetHeader');
   }
 
   GetFooter() {
-    return this.http.get<any>('https://localhost:44343/api/footer/GetFooter');
+    return this.http.get<any>(environment.apiUrl+'footer/GetFooter');
   }
   GetFooterH() {
-    return this.http.get<any>('https://localhost:44343/api/footer/GetFooterHeader');
+    return this.http.get<any>(environment.apiUrl+'footer/GetFooterHeader');
   }
   GetIndex() {
-    return this.http.get<any>(this.url + 'index/GetIndexTable');
+    return this.http.get<any>(environment.apiUrl+ + 'index/GetIndexTable');
   }
   GetImage(imageName:string) {
     const httpOptions = {
@@ -33,6 +33,6 @@ export class IndexService extends BaseService {
       }),
       responseType: 'text' as 'json'
     };
-    return this.http.get('https://localhost:44343/api/index/Get/'+imageName, httpOptions)
+    return this.http.get(environment.apiUrl+'index/Get/'+imageName, httpOptions)
   }
 }

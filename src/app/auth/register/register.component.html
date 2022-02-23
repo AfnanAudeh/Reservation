@@ -1,0 +1,26 @@
+<form [formGroup]="registerForm" (submit)="register()">
+    <mat-form-field class="example-full-width">
+    <mat-label>FullName</mat-label>
+    <input matInput formControlName="name" style=
+    "font-size: x-large;" placeholder="Full Name ">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>email</mat-label>
+        <input matInput formControlName="email" style=
+        "font-size: x-large;" placeholder="email">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>phone</mat-label>
+            <input matInput formControlName="phone" style=
+            "font-size: x-large;" placeholder="phone">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>password</mat-label>
+                <input matInput formControlName="password" style=
+                "font-size: x-large;" placeholder="password">
+                </mat-form-field>
+
+
+<input type="submit" />
+
+</form>

@@ -1,0 +1,22 @@
+<p>add-menuitem-review works!</p>
+
+<form [formGroup]='insertMenuReview' (submit)="InsertMenuReview()">
+
+    <mat-form-field>
+        <input matInput formControlName="rating" style=
+        "font-size: x-large;" placeholder="rating">
+        </mat-form-field>
+       
+    
+        <mat-form-field>
+            <input matInput formControlName="content" style=
+            "font-size: x-large;" placeholder="content">
+            </mat-form-field>
+           
+
+            <mat-form-field>
+                <input matInput formControlName="menuItemId" style=
+                "font-size: x-large;" placeholder="menuItemId">
+                </mat-form-field>
+               
+    <input type="submit" />

@@ -1,0 +1,16 @@
+<p>add-payment works!</p>
+
+<form [formGroup]='insertPayment' (submit)="InsertPayment()">
+
+    <mat-form-field>
+        <input matInput formControlName="paymentPrice" style=
+        "font-size: x-large;" placeholder="price">
+        </mat-form-field>
+       
+    
+        <mat-form-field>
+            <input matInput formControlName="paymentCurrncy" style=
+            "font-size: x-large;" placeholder="currncy">
+            </mat-form-field>
+           
+    <input type="submit" />

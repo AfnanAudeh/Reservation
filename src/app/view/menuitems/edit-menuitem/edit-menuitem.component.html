@@ -1,0 +1,24 @@
+<p>edit-menuitem works!</p>
+
+
+
+<form [formGroup]='editMenuItemForm' (submit)="editMenuItem()">
+    <mat-form-field class="example-full-width">
+  
+    <input matInput formControlName="name" style=
+    "font-size: x-large;" placeholder="name"
+    [(ngModel)]="list[0].menu_Item_Name" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        
+        <input matInput formControlName="price" style=
+        "font-size: x-large;" placeholder="price "
+        [(ngModel)]="list[0].menu_Item_Price"
+        >
+        </mat-form-field>
+    
+    
+   
+<input type="submit" />
+
+</form>

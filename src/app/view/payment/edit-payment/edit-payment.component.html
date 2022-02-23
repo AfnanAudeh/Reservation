@@ -1,0 +1,26 @@
+<p>edit-payment works!</p>
+
+<form [formGroup]='editPayment' (submit)="UpdatePayment()">
+
+    <mat-form-field>
+        <input matInput formControlName="price" style=
+        "font-size: x-large;" placeholder="price"
+        [ngModel]="list.payment_Price"
+        
+        >
+        </mat-form-field>
+        <mat-form-field>
+        <input matInput formControlName="paymentMethod" style=
+        "font-size: x-large;" placeholder="paymentMethod"
+        
+        >
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="currncy" style=
+            "font-size: x-large;" placeholder="currncy"
+            [(ngModel)]="list.payment_Currncy"
+            >
+            </mat-form-field>
+           
+    <input type="submit" />

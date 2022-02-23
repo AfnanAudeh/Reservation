@@ -1,0 +1,19 @@
+<p>edit-menu-category works!</p>
+
+<form [formGroup]="editMenuCategory" (submit)="UpdateMenuCategory()">
+    <mat-form-field class="example-full-width">
+  
+    <input matInput formControlName="name" style=
+    "font-size: x-large;" placeholder="name"
+    [(ngModel)]="list.menu_Category_Name" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        
+        <input matInput formControlName="content"style=
+        "font-size: x-large;" placeholder="content"
+        [(ngModel)]="list.menu_Category_Content"
+        >
+        </mat-form-field>
+        
+   
+<input type="submit" />

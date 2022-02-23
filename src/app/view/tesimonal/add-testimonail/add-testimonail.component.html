@@ -1,0 +1,16 @@
+<p>add-testimonail works!</p>
+
+<form [formGroup]='insertTestimonial' (submit)="InsertTestimonial()">
+
+    <mat-form-field>
+        <input matInput formControlName="testimonialMessage" style=
+        "font-size: x-large;" placeholder="testimonialMessage">
+        </mat-form-field>
+       
+    
+        <mat-form-field>
+            <input matInput formControlName="customerId" style=
+            "font-size: x-large;" placeholder="customerId">
+            </mat-form-field>
+           
+    <input type="submit" />

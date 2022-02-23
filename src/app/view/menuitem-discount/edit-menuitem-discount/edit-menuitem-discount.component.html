@@ -1,0 +1,19 @@
+<p>edit-menuitem-discount works!</p>
+
+<form [formGroup]='editMenuDiscount' (submit)="UpdateMenuCategory()">
+    <mat-form-field>
+        <input matInput formControlName="rate" style=
+        "font-size: x-large;" placeholder="rate"
+        [(ngModel)]="list.discount_Rate"
+        >
+        </mat-form-field>
+       
+    
+        <mat-form-field>
+            <input matInput formControlName="menuItemId" style=
+            "font-size: x-large;" placeholder="menuItemId"
+            [(ngModel)]="list.Menu_Item_Id"
+            >
+            </mat-form-field>
+           
+    <input type="submit" />

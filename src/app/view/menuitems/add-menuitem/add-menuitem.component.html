@@ -1,0 +1,36 @@
+<p>add-menuitem works!</p>
+
+
+
+<form [formGroup]='insertMenuItemForm' (submit)="addMenuItem()">
+    <mat-form-field class="example-full-width">
+  
+    <input matInput formControlName="name" style=
+    "font-size: x-large;" placeholder="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        
+        <input matInput formControlName="price" style=
+        "font-size: x-large;" placeholder="price ">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            
+            <input matInput formControlName="content" style=
+            "font-size: x-large;" placeholder="content">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+               
+                <input matInput formControlName="quantity" style=
+                "font-size: x-large;" placeholder="quantity">
+                </mat-form-field>
+    
+                <mat-form-field class="example-full-width">
+               
+                    <input matInput formControlName="menuId" style=
+                    "font-size: x-large;" placeholder="menuId">
+                    </mat-form-field>
+        
+   
+<input type="submit" />
+
+</form>
