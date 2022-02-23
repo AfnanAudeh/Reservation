@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AboutUsService } from '../services/about-us.service';
-import { IndexService } from '../services/index.service';
-import { AboutUsClass } from '../shared/about-us-class.model';
+import { AboutUsService } from 'src/app/services/about-us.service';
+
 
 @Component({
   selector: 'app-about-us',

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { AboutUsComponent } from './home/about-us/about-us.component';
 import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 import { AppComponent } from './app.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-import { ReservationModule } from './reservation/reservation.module';
+import { ContactUsComponent } from './home/contact-us/contact-us.component';
+import { ReservationModule } from './home/reservation/reservation.module';
+import { IndexComponent } from './home/index/index.component';
 
 
 
@@ -24,6 +25,10 @@ const routes: Routes = [
  {
    path:'aboutus',
    component:AboutUsComponent
+ },
+ {
+   path:'',
+   component:IndexComponent
  }
 ];
 

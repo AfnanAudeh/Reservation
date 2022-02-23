@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 import { SysImagesService } from 'src/app/services/sys-images.service';
 
 @Component({
@@ -12,33 +13,34 @@ export class SysimageComponent implements OnInit {
     name: new FormControl(''),
     imagename: new FormControl('')
   });
-  constructor(private sysImageService: SysImagesService) { }
+  path:any;
+  constructor(private sysImageService: SysImagesService,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
   }
-
-
  
-
   uploadImage(files: any) {
     if (files.length === 0) {
       return;
     }
     let fileToUpload = <File>files[0];
-    console.log(fileToUpload);
-    
     const formData = new FormData();
     formData.append('file', fileToUpload, fileToUpload.name);
-    this.sysImageService.uploadImage(formData);
-
+    this.sysImageService.uploadImage(formData).subscribe(
+      (result)=>{this.CreateForm.value.imagename=result;
+      console.log(result);
+      }
+    );
   }
   Create() {
     const obj = {
       image_Name: this.CreateForm.value.name,
       image_Path: this.CreateForm.value.imagename,
     }
+    console.log(obj);
     debugger
-     this.sysImageService.Create(obj);
+    this.sysImageService.Create(obj);
   }
+  
 }
 

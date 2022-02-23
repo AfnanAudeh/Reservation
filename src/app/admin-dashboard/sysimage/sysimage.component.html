@@ -1,7 +1,12 @@
 <form [formGroup]="CreateForm">
-<input formControlName="name">
-<input type="file" #file placeholder="Choose Image" formControlName="imagename" accept="image/*" 
-style="display:none;" (change)="uploadImage(file.files)">
-<button type="button" class="btn btn-success" (click)="file.click()">Upload Image</button>
+    <div style="padding: 1cm;">
+<label>Image Name</label>
+<input formControlName="name"  type="text">
+<br>
+<label>Image File</label>
+<br>
+<input type="file" #file placeholder="Choose Image"  accept="image/*"
+(change)="uploadImage(file.files)">
+</div>
 </form>
-<button (click)="Create()">Create</button>
+<button (click)="Create()" type="submit">Create</button>

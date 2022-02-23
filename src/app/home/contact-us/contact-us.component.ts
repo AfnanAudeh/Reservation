@@ -1,8 +1,8 @@
 import { Component, OnInit, SecurityContext } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer} from '@angular/platform-browser';
-import { ContactUsServiceService } from '../services/contact-us-service.service';
-import { ContactusInfoService } from '../services/contactus-info.service';
+import { ContactUsServiceService } from 'src/app/services/contact-us-service.service';
+import { ContactusInfoService } from 'src/app/services/contactus-info.service';
 
 
 @Component({
@@ -21,16 +21,13 @@ export class ContactUsComponent implements OnInit {
     subject:new FormControl('', Validators.required),
     message:new FormControl('', Validators.required)
   });
-
-
-
   constructor(private contactUsService:ContactUsServiceService,private sanitizer: DomSanitizer,private contactUsInfo :ContactusInfoService) 
   {
   }
 
   ngOnInit(): void {
     this.contactUsInfo.getContactUsInfo().subscribe(
-      result=>{this.contactUsInfoArr=result
+      (result:any)=>{this.contactUsInfoArr=result
         console.log(result);
       }
   );
@@ -44,7 +41,6 @@ export class ContactUsComponent implements OnInit {
     subject:this.ContactUsForm.value.subject.toString(),
     message:this.ContactUsForm.value.message.toString(),
     }
-    debugger
     let x=this.contactUsService.AddContactUs(obj);
     if(x)
     {

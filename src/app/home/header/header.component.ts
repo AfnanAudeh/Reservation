@@ -1,19 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IndexService } from '../services/index.service';
-// work
-/////////////////////////////////////
-////////////////////////////////////
-///////////////////////////////////
-///////////////////////////////
-///////////////////////////////
-//////////////////////////
-/////////////////////
-//////////
-//////
-//////
-//
-//
+import { ContactusInfoService } from 'src/app/services/contactus-info.service';
+import { IndexService } from 'src/app/services/index.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -23,7 +12,8 @@ import { IndexService } from '../services/index.service';
 export class HeaderComponent implements OnInit {
  
 headerArr:any=[];
-  constructor(private indexService : IndexService, private router:Router) { }
+contactInfo:any=[];
+  constructor(private indexService : IndexService, private router:Router,private contactUsInfo:ContactusInfoService) { }
 
   ngOnInit(): void {
     this.indexService.GetHeader().subscribe(
@@ -31,6 +21,13 @@ headerArr:any=[];
         this.headerArr=result;
       }
     );
+    this.contactUsInfo.getContactUsInfo().subscribe(
+      result=>{
+        this.contactInfo=result;
+        console.log(result);
+        
+      }
+    )
    }
    
    BookTable()
@@ -39,7 +36,7 @@ headerArr:any=[];
    }
    Home()
    {
-    this.router.navigate(['index']);
+    this.router.navigate(['']);
    }
    AboutUs()
    {
