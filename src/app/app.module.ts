@@ -15,6 +15,9 @@ import { ContactUsComponent } from './home/contact-us/contact-us.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { IndexComponent } from './home/index/index.component';
+import { AdminDashboardComponent } from './Dashboards/admin-dashboard/admin-dashboard.component';
+import { CustomerDashboardComponent } from './Dashboards/customer-dashboard/customer-dashboard.component';
+import { WaiterDashboardComponent } from './Dashboards/waiter-dashboard/waiter-dashboard.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { IndexComponent } from './home/index/index.component';
     AboutUsComponent,
     FooterComponent,
     ContactUsComponent,
-    IndexComponent
+    IndexComponent,
+    AdminDashboardComponent,
+    CustomerDashboardComponent,
+    WaiterDashboardComponent
    
   ],
   imports: [
