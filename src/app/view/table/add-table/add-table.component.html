@@ -1,0 +1,13 @@
+<form [formGroup]="AddTableForm"  class="php-email-form">
+    
+    <div class="form-group mt-3">
+        <input type="number" name="location" matInput formControlName="max_Person" class="form-control" #max_Person placeholder="max_Person" required>
+    </div>
+    <div class="form-group mt-3">
+        <input type="file" #file placeholder="Choose Image"  accept="image/*" (change)="uploadImage(file.files)">
+    </div>
+    <div class="form-group mt-3">
+        <textarea class="form-control" matInput formControlName="details" name="details" rows="8" placeholder="details" required></textarea>
+    </div>
+    <div class="text-center"><button type="submit" (click)="AddTable()">Add Table</button></div>
+</form>

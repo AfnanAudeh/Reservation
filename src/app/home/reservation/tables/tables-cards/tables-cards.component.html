@@ -3,7 +3,7 @@
         <mat-card-header>
             <mat-card-title>Table NO. {{table_Id}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+        <img mat-card-image [src]="sanitizedImageData">
         <mat-card-content>
             <p>
                 {{details}}

@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
-import{ NgxSpinnerModule } from 'ngx-spinner';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { ContactUsComponent } from './home/contact-us/contact-us.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutUsComponent } from './home/about-us/about-us.component';
@@ -31,7 +31,7 @@ import { WaiterDashboardComponent } from './Dashboards/waiter-dashboard/waiter-d
     AdminDashboardComponent,
     CustomerDashboardComponent,
     WaiterDashboardComponent
-   
+
   ],
   imports: [
     BrowserModule,
@@ -40,11 +40,13 @@ import { WaiterDashboardComponent } from './Dashboards/waiter-dashboard/waiter-d
     HttpClientModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgxSpinnerModule,
-    FormsModule, ReactiveFormsModule
+
   ],
   exports: [MatFormFieldModule,
-  HeaderComponent,
+    HeaderComponent,
     FooterComponent,
     ContactUsComponent],
   providers: [IndexService],

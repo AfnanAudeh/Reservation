@@ -21,6 +21,9 @@ export class TablesComponent implements OnInit {
   @Input() id: number | undefined;
   @Input() reservationFrom: Date | undefined;
   @Input() reservationTo: Date | undefined;
+  sanitizedImageData: any;
+  sanitizer: any;
+  image: any=[];
   constructor(private tableService: TableServiceService, public dialog: MatDialog, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
@@ -33,6 +36,15 @@ export class TablesComponent implements OnInit {
       this.tables = result
       this.spinner.hide();
     });
+  }
+  Get(imageName:string[]) {
+    this.tableService.GetImage(imageName)
+      .subscribe(
+        (data: any) => {
+          this.image = 'data:image/jpg;base64,' + data;
+          this.sanitizedImageData = this.sanitizer.bypassSecurityTrustUrl(this.image);
+        }
+      );
   }
   // ***************************************** Should i test it
   Filter() {

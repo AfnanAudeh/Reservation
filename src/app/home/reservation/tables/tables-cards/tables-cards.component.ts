@@ -20,7 +20,7 @@ export class TablesCardsComponent implements OnInit {
 
   @Input() tableData = new TableClass;
   constructor(public dialog: MatDialog, public table: TablesComponent) { }
-
+  sanitizedImageData:any;
   ngOnInit(): void {
 
   }

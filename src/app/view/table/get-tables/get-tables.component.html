@@ -1,0 +1,19 @@
+
+<button (click)="AddTable()">Add Table</button>
+<table>
+    <tr>
+        <th>id</th>
+        <th>chairs</th>
+        <th>Details</th>
+        <th>Image</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let data of tables">
+        <td>{{data.table_Id}}</td>
+        <td>{{data.max_Person}}</td>
+        <td>{{data.details}}</td>
+        <td><img [src]="sanitizedImageData"></td>
+        <td><button (click)="EditTable()">Edit</button></td>
+        <td><button (click)="DeleteTable(data.table_Id)">Delete</button></td>
+    </tr>
+</table>

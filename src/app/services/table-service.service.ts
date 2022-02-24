@@ -20,15 +20,31 @@ export class TableServiceService {
   GetTables() {
     return this.http.get<TableClass[]>(environment.apiUrl+'table/GetAllTables');
   }
+  uploadImage(file: FormData) {
+
+    return this.http.post(environment.apiUrl + 'table/UploadImage/', file, { responseType: 'text' });
+  }
+  GetImage(imageName:string[]) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Accept': 'text/html',
+        'Content-Type': 'text/plain; charset=utf-8'
+      }),
+      responseType: 'text' as 'json'
+    };
+    return this.http.post(environment.apiUrl+'table/Get',imageName,httpOptions);
+  }
   CreateTable(table: any) {
-    this.http.post(environment.apiUrl+"reservation/InsertReservation", table);
+    return this.http.post(environment.apiUrl+"table/AddTable", table);
   }
   UpdateTable(table: any) {
-    this.http.put(environment.apiUrl+"reservation/InsertReservation", table);
+    this.http.put(environment.apiUrl+"table/UpdateTable", table);
   }
-  DeleteTable(id: number) {
-    this.http.put(environment.apiUrl+'reservation/InsertReservation/' + id, this.requestOptions);
+  DeleteTable(id?: number) {
+    return this.http.delete(environment.apiUrl+'table/DeleteTable/' + id, this.requestOptions);
   }
+
+  //************************* Reservation *************************** */
   ReserveTable(reservationData: any) {
     this.http.post(environment.apiUrl+"reservation/InsertReservation", reservationData).
       subscribe(result => { console.log(result) });

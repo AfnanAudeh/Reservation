@@ -5,11 +5,4 @@ details? :string ;
 image_Location? :string;
 temproryReservations?:string;
 
-constructor()
-{
-
-}
-// public get tableId(){
-//     return this.table_Id;
-// }
 }

@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './home/about-us/about-us.component';
-import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 import { AppComponent } from './app.component';
 import { ContactUsComponent } from './home/contact-us/contact-us.component';
 import { ReservationModule } from './home/reservation/reservation.module';
 import { IndexComponent } from './home/index/index.component';
 import { AuthModule } from './auth/auth.module';
+import { AdminDashboardComponent } from './Dashboards/admin-dashboard/admin-dashboard.component';
+import { TableModule } from './view/table/table.module';
 
 
 
@@ -14,10 +15,6 @@ const routes: Routes = [
   {
     path: 'reservation',
     loadChildren: () => ReservationModule
-  },
-  {
-    path: 'admin',
-    loadChildren: () => AdminDashboardModule
   },
   {
     path: 'contactus',
@@ -120,6 +117,14 @@ const routes: Routes = [
     path: 'waiter',
     loadChildren: () => import('../app/view/waiter/waiter.module').then(m => m.WaiterModule)
 
+  },
+  {
+    path: 'Tables',
+    loadChildren: () => TableModule
+  },
+  {
+    path:'admin',
+    component:AdminDashboardComponent
   }
 
 ];
