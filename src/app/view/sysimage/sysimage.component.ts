@@ -28,8 +28,8 @@ export class SysimageComponent implements OnInit {
     const formData = new FormData();
     formData.append('file', fileToUpload, fileToUpload.name);
     this.sysImageService.uploadImage(formData).subscribe(
-      (result)=>{this.CreateForm.value.imagename=result;
-      
+      (result)=>{
+        this.CreateForm.controls['imagename'].setValue(result);
       }
     );
   }

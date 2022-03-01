@@ -24,8 +24,6 @@ contactInfo:any=[];
     this.contactUsInfo.getContactUsInfo().subscribe(
       result=>{
         this.contactInfo=result;
-        console.log(result);
-        
       }
     )
    }

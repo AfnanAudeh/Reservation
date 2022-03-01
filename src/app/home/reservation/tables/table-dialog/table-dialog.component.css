@@ -1,0 +1,16 @@
+.dialog h3,h2{
+    color: #a58143;
+    font-weight:600;
+}
+.dialog p{
+    color:black ;
+    font-weight:500;
+}
+section {
+    padding: 0px 0;
+    overflow: hidden;
+}
+h3, .h3 {
+    margin-bottom: 12px;
+    line-height: 1.4em;
+}

@@ -19,6 +19,13 @@ import { AdminDashboardComponent } from './Dashboards/admin-dashboard/admin-dash
 import { CustomerDashboardComponent } from './Dashboards/customer-dashboard/customer-dashboard.component';
 import { WaiterDashboardComponent } from './Dashboards/waiter-dashboard/waiter-dashboard.component';
 
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ComponentsModule } from './components/components.module';
+import {NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import { AdminLayoutComponent } from './layouts copy/admin-layout/admin-layout.component';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +37,8 @@ import { WaiterDashboardComponent } from './Dashboards/waiter-dashboard/waiter-d
     IndexComponent,
     AdminDashboardComponent,
     CustomerDashboardComponent,
-    WaiterDashboardComponent
+    WaiterDashboardComponent,
+    AdminLayoutComponent
 
   ],
   imports: [
@@ -43,6 +51,11 @@ import { WaiterDashboardComponent } from './Dashboards/waiter-dashboard/waiter-d
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
+    ComponentsModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatNativeDateModule,
+    CommonModule
 
   ],
   exports: [MatFormFieldModule,

@@ -1,14 +1,23 @@
 .table-card {
     width: 350px;
     height: 430px;
-    background: darkgoldenrod;
+    background: #a58143;;
     color: rgba(0, 0, 0, .87);
 }
 
 .cards-container {
     margin-top: 3cm;
-    margin-right: 1cm;
-    margin-left: 1cm;
     margin-bottom: 3cm;
     display: inline-block;
+}
+
+.mat-card-image {
+    width: calc(100% + 32px);
+    margin: 0 7px 36px -1px;
+    margin-top: 0px;
+    margin-right: 7px;
+    margin-bottom: 16px;
+    margin-left: -16px;
+    display: block;
+    overflow: hidden;
 }

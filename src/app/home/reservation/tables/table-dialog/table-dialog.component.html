@@ -1,20 +1,21 @@
-<div>
-    <h2 mat-dialog-title>Table NO.{{tableData.table_Id}}</h2>
-    <mat-dialog-content>
-
-        <h3>Details :</h3>
-
-        <p>{{tableData.details}}</p>
-
-        <h3>Max Person </h3>
-
-        <p>{{tableData.max_Person}}</p>
-
-
-
-    </mat-dialog-content>
-    <mat-dialog-actions align="end">
-        <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
-    </mat-dialog-actions>
-</div>
+<section id="book-a-table" class="book-a-table">
+    <div class="container">
+        <div class="dialog">
+            <h2 mat-dialog-title>Table NO.{{tableData.table_Id}}</h2>
+            <img mat-card-image [src]="'./assets/img/Tables/'+tableData.image_Location" width="400" height="340">
+            <mat-dialog-content>
+                <div class="row">
+                    <h3>Details :</h3>
+                    <p>{{tableData.details}}</p>
+                </div>
+                <div class="row">
+                    <h3>Max Person </h3>
+                    <p>{{tableData.max_Person}}</p>
+                </div>
+            </mat-dialog-content>
+            <mat-dialog-actions align="end">
+                <button mat-button mat-dialog-close>Close</button>
+            </mat-dialog-actions>
+        </div>
+    </div>
+</section>

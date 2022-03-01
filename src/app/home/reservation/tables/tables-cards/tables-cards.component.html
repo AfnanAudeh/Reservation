@@ -1,16 +1,12 @@
 <div class="cards-container">
     <mat-card class="table-card">
         <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title>Table NO. {{table_Id}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image [src]="sanitizedImageData">
+        <img mat-card-image [src]="'./assets/img/Tables/'+image_Location" alt="Table Photo">
         <mat-card-content>
-            <p>
-                {{details}}
-            </p>
-            <p>Max person :{{max_Person}}
-
-            </p>
+            <p>Max person :{{max_Person}} </p>
         </mat-card-content>
         <mat-card-actions>
             <button mat-button (click)="openDialog()">View Table</button>

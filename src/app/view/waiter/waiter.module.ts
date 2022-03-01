@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WaiterRoutingModule } from './waiter-routing.module';
 import { TasksComponent } from './tasks/tasks.component';
+
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { TasksComponent } from './tasks/tasks.component';
   ],
   imports: [
     CommonModule,
-    WaiterRoutingModule
+    WaiterRoutingModule,
+    FormsModule, ReactiveFormsModule
   ]
 })
 export class WaiterModule { }

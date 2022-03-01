@@ -8,6 +8,10 @@ import { IndexComponent } from './home/index/index.component';
 import { AuthModule } from './auth/auth.module';
 import { AdminDashboardComponent } from './Dashboards/admin-dashboard/admin-dashboard.component';
 import { TableModule } from './view/table/table.module';
+import { AdminLayoutComponent } from './layouts copy/admin-layout/admin-layout.component';
+import { ReservationsModule } from './view/reservations/reservations.module';
+import { CustomersModule } from './view/customers/customers.module';
+
 
 
 
@@ -123,8 +127,36 @@ const routes: Routes = [
     loadChildren: () => TableModule
   },
   {
-    path:'admin',
-    component:AdminDashboardComponent
+    path: 'admin',
+    component: AdminDashboardComponent
+  },
+  {
+    path: "",
+    redirectTo: "dashboard",
+    pathMatch: "full"
+  },
+  {
+    path: "",
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: "",
+        loadChildren: () => import("./layouts copy/admin-layout/admin-layout.module").then(m => m.AdminLayoutModule)
+
+      }
+    ]
+  },
+  {
+    path:'reservations',
+    loadChildren:()=>ReservationsModule
+  },
+  {
+    path: "dashboard",
+    redirectTo: "dashboard"
+  },
+  {
+    path:'customer',
+    loadChildren:()=>CustomersModule
   }
 
 ];

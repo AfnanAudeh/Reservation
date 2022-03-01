@@ -4,6 +4,7 @@ import { TableClass } from 'src/app/shared/table-class.model';
 import { TableServiceService } from 'src/app/services/table-service.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableDto } from 'src/app/shared/table-dto';
+import { ReservationService } from 'src/app/services/reservation.service';
 
 
 @Component({
@@ -14,17 +15,15 @@ import { TableDto } from 'src/app/shared/table-dto';
 export class TablesComponent implements OnInit {
 
   tables!: TableClass[];
-  filter?: TableDto;
   filterdByChairs?: TableClass[];
   filterdByDate?: TableClass[];
   @Input() chair: number | undefined;
   @Input() id: number | undefined;
   @Input() reservationFrom: Date | undefined;
   @Input() reservationTo: Date | undefined;
-  sanitizedImageData: any;
-  sanitizer: any;
-  image: any=[];
-  constructor(private tableService: TableServiceService, public dialog: MatDialog, private spinner: NgxSpinnerService) { }
+
+  image: any = [];
+  constructor(private tableService: TableServiceService, public dialog: MatDialog, private spinner: NgxSpinnerService, private reservationService: ReservationService) { }
 
   ngOnInit(): void {
     this.spinner.show();
@@ -37,51 +36,25 @@ export class TablesComponent implements OnInit {
       this.spinner.hide();
     });
   }
-  Get(imageName:string[]) {
-    this.tableService.GetImage(imageName)
-      .subscribe(
-        (data: any) => {
-          this.image = 'data:image/jpg;base64,' + data;
-          this.sanitizedImageData = this.sanitizer.bypassSecurityTrustUrl(this.image);
-        }
-      );
-  }
+ 
   // ***************************************** Should i test it
   Filter() {
-    if (this.filter?.chairs != null)
-      {
-        if (this.filter?.reservationFrom == null && this.filter?.reservationTo == null) {
-        this.tableService.FilterByNumberOfChairs(this.filter.chairs).subscribe((result) => { this.tables = result; })
-      }
-    }
-  }
-  FilterByChairs(value: any) {
-    this.chair = parseInt(value);
-    this.tableService.FilterByNumberOfChairs(this.chair).subscribe(result => {
-      this.filterdByChairs = result
-    });
-    if (this.filterdByChairs) {
-      this.tables = this.filterdByChairs;
-    }
-
-  }
-  FilterByDate(value1?: any, value2?: any) {
-    this.reservationFrom = value1;
-    this.reservationTo = value2;
-    let filter = {
+    const filter = {
       reservationFrom: this.reservationFrom,
-      reservationTo: this.reservationTo
+      reservationTo: this.reservationTo,
+      chairs: this.chair
     }
-    this.tableService.FilterByDate(filter).subscribe((result) => { this.tables = result });
-
+    if (filter.reservationFrom != null && filter.reservationTo != null && filter.chairs == null) {
+      this.tableService.FilterByDate(filter).subscribe(result => { this.tables = result })
+    }
+    else if (filter.reservationFrom != null && filter.reservationTo != null && filter.chairs != null) {
+      this.tableService.FilterByDateAndChair(filter).subscribe(result => { this.tables = result })
+    }
   }
-  FilterByDateAndChair(filter: any) {
-    debugger
-    this.tableService.FilterByDateAndChair(filter).subscribe(
-      (result) => {
-        console.log(result);
-      }
-    );
+  Clear() {
+    this.chair = 0
+    this.reservationFrom = undefined;
+    this.reservationTo = undefined;
   }
 
 }

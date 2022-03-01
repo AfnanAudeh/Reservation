@@ -23,16 +23,7 @@ export class IndexService{
     return this.http.get<any>(environment.apiUrl+'footer/GetFooterHeader');
   }
   GetIndex() {
-    return this.http.get<any>(environment.apiUrl+ + 'index/GetIndexTable');
+    return this.http.get<any>(environment.apiUrl+'index/GetIndexTable');
   }
-  GetImage(imageName:string) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Accept': 'text/html',
-        'Content-Type': 'text/plain; charset=utf-8'
-      }),
-      responseType: 'text' as 'json'
-    };
-    return this.http.get(environment.apiUrl+'index/Get/'+imageName, httpOptions)
-  }
+ 
 }

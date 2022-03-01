@@ -20,7 +20,7 @@ export class CustomerService {
   constructor(public http: HttpClient, private route: Router) { }
   //dto
   GetAllCustomers() {
-    return this.http.get(environment.apiUrl + "Customer/GetAllCustomer", this.requestOptions)
+    return this.http.get(environment.apiUrl + "customer/GetAllCustomers", this.requestOptions)
   }
   GetCustomerByName(name: string) {
     return this.http.get(environment.apiUrl + "Customer/GetCustomerByName?name=" + name, this.requestOptions)

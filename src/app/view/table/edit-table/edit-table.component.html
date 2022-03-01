@@ -1,1 +1,54 @@
-<p>edit-table works!</p>
+<div class=" content">
+    <div class=" row">
+        <div class=" col-md-8">
+            <div class=" card">
+                <div class=" card-header">
+                    <h5 class=" title">Edit Table Data</h5>
+                </div>
+                <div class=" card-body">
+                    <form [formGroup]="EditTableForm">
+                        <div class=" row">
+                            <div class=" col-md-12">
+                                <div class=" form-group">
+                                    <label> Chairs </label>
+                                    <input class="form-control" type="number" formControlName="max_Person" #max_Person
+                                        placeholder="max_Person"  value="{{table[0]?.max_Person}}"  />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class=" row">
+                            <div class=" col-md-6">
+                                <div class=" form-group">
+                                    <label> Image </label>
+                                    <input type="file" #file placeholder="Choose Image" accept="image/*"
+                                        (change)="uploadImage(file.files)">
+                                        <button class=" btn btn-fill btn-danger" style="margin-left:25px;"> Upload Image </button>
+                                </div>
+                               
+                            </div>
+                            <div class=" col-md-12">
+                                <div class=" form-group">
+                                    <img [src]="'./assets/img/Tables/'+table[0]?.image_Location" width="250px" height="250px">
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" row">
+                            <div class=" col-md-8">
+                                <div class=" form-group">
+                                    <label> Details </label>
+                                    <textarea class=" form-control" cols="80" placeholder="Table Details" rows="4"
+                                        matInput formControlName="details" [value]="table[0]?.details" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class=" card-footer">
+                    <button class=" btn btn-fill btn-danger" button type="submit" (click)="UpdateTable()">Save</button>
+                </div>
+               
+            </div>
+        </div>
+
+    </div>
