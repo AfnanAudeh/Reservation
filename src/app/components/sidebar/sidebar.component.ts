@@ -17,27 +17,6 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/icons",
-    title: "Icons",
-    rtlTitle: "الرموز",
-    icon: "icon-atom",
-    class: ""
-  },
-  {
-    path: "/maps",
-    title: "Maps",
-    rtlTitle: "خرائط",
-    icon: "icon-pin",
-    class: "" },
-  {
-    path: "/notifications",
-    title: "Notifications",
-    rtlTitle: "إخطارات",
-    icon: "icon-bell-55",
-    class: ""
-  },
-
-  {
     path: "/user",
     title: "User Profile",
     rtlTitle: "ملف تعريفي للمستخدم",
@@ -45,29 +24,36 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/tables",
-    title: "Table List",
-    rtlTitle: "قائمة الجدول",
-    icon: "icon-puzzle-10",
-    class: ""
-  },
-  {
-    path: "/typography",
-    title: "Typography",
-    rtlTitle: "طباعة",
-    icon: "icon-align-center",
-    class: ""
-  },
-  {
-    path: "app/view/table/GetTable",
+    path: "/GetTable",
     title: "Resturant Tables",
     rtlTitle: "طاولات المطعم",
     icon: "icon-app",
     class: ""
   },
   {
-    path: "getReservation",
+    path: "/GetReservations",
     title:"Reservations",
+    rtlTitle: "",
+    icon: "icon-app",
+    class: ""
+  },
+  {
+    path:'/about',
+    title:"AboutUs",
+    rtlTitle: "",
+    icon: "icon-app",
+    class: ""
+  },
+  {
+    path:"/contactUsInfo",
+    title:"Contact Us Information",
+    rtlTitle: "",
+    icon: "icon-app",
+    class: ""
+  },
+  {
+    path:"/GetCustomers",
+    title:"Customers",
     rtlTitle: "",
     icon: "icon-app",
     class: ""

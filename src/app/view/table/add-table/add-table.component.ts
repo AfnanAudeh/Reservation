@@ -18,7 +18,7 @@ export class AddTableComponent implements OnInit {
     details: new FormControl('', Validators.required),
     image_Location: new FormControl('', Validators.required)
   });
-  constructor(private tableService:TableServiceService , private toastr: ToastrService) { }
+  constructor(private tableService:TableServiceService ) { }
 
   ngOnInit(): void {
   }
@@ -31,7 +31,7 @@ export class AddTableComponent implements OnInit {
     }
     this.tableService.CreateTable(obj).subscribe(
       (result)=>{
-        this.toastr.success('Table Created Succefully')
+       // this.toastr.success('Table Created Succefully')
     
     });
   }

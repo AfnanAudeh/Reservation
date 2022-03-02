@@ -19,7 +19,7 @@ export class EditTableComponent implements OnInit {
     details: new FormControl(''),
     image_Location: new FormControl('')
   });
-  constructor(private tableService: TableServiceService, private router: Router,private toastr: ToastrService) {
+  constructor(private tableService: TableServiceService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -43,7 +43,7 @@ export class EditTableComponent implements OnInit {
       (result) => {
         this.EditTableForm.controls['image_Location'].setValue(result);
         this.path = './assets/img/Tables/' + result;
-        this.toastr.success('Updated Succefully')
+        // this.toastr.success('Updated Succefully')
       }
     );
   }

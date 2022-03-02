@@ -14,8 +14,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     GetTablesComponent
   ],
   imports: [
-    // CommonModule,
-    // BrowserModule,
+    CommonModule,
     TableRoutingModule,
     FormsModule,
     ReactiveFormsModule,
