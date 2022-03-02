@@ -7,7 +7,9 @@
   <div class="card card-plain">
     <div class="card-header">
       <h4 class="card-title">Reservations</h4>
-      <button type="button" label="PDF" (click)="DownloadReport()">Report</button>
+      <div>
+        <button mat-button (click)="openDialog()">Generate Report</button>
+      </div>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -28,7 +30,7 @@
               <td>{{data.reservation_To |date:'short':'IST'}}</td>
               <td>{{data.res_Status}}</td>
               <td><select name="state" #state>
-                  <option></option>
+                  <option>Choose Request State</option>
                   <option value="ACCEPT">Accept</option>
                   <option value="REJECT">Reject</option>
                 </select></td>

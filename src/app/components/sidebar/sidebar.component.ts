@@ -59,7 +59,7 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/view/table/GetTable",
+    path: "app/view/table/GetTable",
     title: "Resturant Tables",
     rtlTitle: "طاولات المطعم",
     icon: "icon-app",

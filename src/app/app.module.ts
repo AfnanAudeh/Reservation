@@ -24,7 +24,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ComponentsModule } from './components/components.module';
 import {NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 import { AdminLayoutComponent } from './layouts copy/admin-layout/admin-layout.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -52,6 +52,7 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     NgxSpinnerModule,
     ComponentsModule,
+    MatDialogModule,
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
     NgxMatNativeDateModule,
@@ -62,7 +63,7 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     FooterComponent,
     ContactUsComponent],
-  providers: [IndexService],
+  providers: [IndexService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
