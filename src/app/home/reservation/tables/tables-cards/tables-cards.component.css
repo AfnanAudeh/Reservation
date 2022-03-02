@@ -1,10 +1,19 @@
+/* 
+
 .table-card {
-    width: 350px;
-    height: 430px;
+    display: inline-block;
     background: #a58143;;
     color: rgba(0, 0, 0, .87);
 }
-
+.table-card img{
+    width:200px;
+    height: 200px;
+}
+.cards-container {
+   
+    display: flex;
+} */
+/*
 .cards-container {
     margin-top: 3cm;
     margin-bottom: 3cm;
@@ -20,4 +29,26 @@
     margin-left: -16px;
     display: block;
     overflow: hidden;
+} */
+.mat-card-image {
+  width: 300px;
+  height: 194px;
+}
+.mat-card {
+  background: #a58143;
+  color: rgba(0, 0, 0, 0.87);
+  width: 300px;
+  height: 350px;
+  margin-left: 5px;
+}
+.ng-star-inserted{
+    margin-left: -15px;
+    width: 297px;
+    height: 213px;
+    /* position: absolute; */
+}
+.ng-star-inserted img{
+    margin-top: -14px;
+    width: 297px;
+    height: 213px;
 }

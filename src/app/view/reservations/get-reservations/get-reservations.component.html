@@ -19,6 +19,7 @@
           <label>To Date (Date/Time):</label>
           <input type="datetime-local" #filterToDate [(ngModel)]="reservationTo">
           <button (click)="FilterReservations()" class=" btn btn-fill btn-danger" id="search">Search</button>
+          <button (click)="Clear()" class=" btn btn-fill btn-danger" id="search">Clear</button>
         </div>
         </div>
         <div class="card-body">

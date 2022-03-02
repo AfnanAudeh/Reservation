@@ -1,7 +1,20 @@
 #topbar {
-    position: static;
+  position: static;
 }
 
 #header {
-    position: static;
+  position: static;
+}
+a:not([href]):not([tabindex]) {
+  color: beige;
+  text-decoration: none;
+}
+.navbar {
+  padding: 10px 30px 10px 15px;
+  width: 100%;
+  z-index: 1050;
+  background: transparent;
+}
+a {
+  cursor: pointer;
 }

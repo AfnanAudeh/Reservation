@@ -9,7 +9,7 @@
                     <div class=" card-header">
                         <div class="flex-container">
                             <h4 class=" card-title">Resturant Tables</h4>
-                            <button (click)="AddTable()" id="AddTable" class=" btn btn-fill btn-danger">Add
+                            <button (click)="AddTable()" mat-button id="AddTable" class=" btn btn-fill btn-danger">Add
                                 Table</button>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                                         <td>{{data.details}}</td>
                                         <td><img [src]="'./assets/img/Tables/'+data.image_Location" width="150"
                                                 height="150"></td>
-                                        <td><button (click)="EditTable(data.table_Id)">Edit</button></td>
+                                        <td><button mat-button (click)="EditTable(data.table_Id)">Edit</button></td>
                                         <td><button (click)="DeleteTable(data.table_Id)">Delete</button></td>
                                     </tr>
                                 </tbody>

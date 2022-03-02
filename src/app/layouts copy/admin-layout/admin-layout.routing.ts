@@ -12,6 +12,7 @@ import { AboutusComponent } from "src/app/view/aboutus/aboutus.component";
 import { GetReservationsComponent } from "src/app/view/reservations/get-reservations/get-reservations.component";
 import { ContactusinfoComponent } from "src/app/view/contactusinfo/contactusinfo.component";
 import { GetCustomersComponent } from "src/app/view/customers/get-customers/get-customers.component";
+import { EditTableComponent } from "src/app/view/table/edit-table/edit-table.component";
 
 
 
@@ -28,6 +29,6 @@ export const AdminLayoutRoutes: Routes = [
   { path: "GetReservations", component: GetReservationsComponent },
   { path: "about", component: AboutusComponent },
   {path:"contactUsInfo",component:ContactusinfoComponent},
-  {path:"customers",component:GetCustomersComponent}
+  {path:"GetCustomers",component:GetCustomersComponent}
 
 ];

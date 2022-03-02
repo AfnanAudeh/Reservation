@@ -34,28 +34,28 @@ export const ROUTES: RouteInfo[] = [
     path: "/GetReservations",
     title:"Reservations",
     rtlTitle: "",
-    icon: "icon-app",
+    icon: "icon-book-bookmark",
     class: ""
   },
   {
     path:'/about',
     title:"AboutUs",
     rtlTitle: "",
-    icon: "icon-app",
+    icon: "icon-paper",
     class: ""
   },
   {
     path:"/contactUsInfo",
     title:"Contact Us Information",
     rtlTitle: "",
-    icon: "icon-app",
+    icon: "icon-mobile",
     class: ""
   },
   {
     path:"/GetCustomers",
     title:"Customers",
     rtlTitle: "",
-    icon: "icon-app",
+    icon: "icon-badge",
     class: ""
   }
 ];

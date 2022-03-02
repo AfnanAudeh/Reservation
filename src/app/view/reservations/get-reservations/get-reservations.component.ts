@@ -10,20 +10,17 @@ import { ReservationsReportComponent } from '../reservations-report/reservations
   selector: 'app-get-reservations',
   templateUrl: './get-reservations.component.html',
   styleUrls: ['./get-reservations.component.css'],
-  
+
 })
 export class GetReservationsComponent implements OnInit {
   reservationArr: any = [];
-  @Input() reservationFrom: Date | undefined;
-  @Input() reservationTo: Date | undefined;
- 
-  constructor(private reservationService: ReservationService,public dialog: MatDialog) {
+  @Input() reservationFrom: Date | undefined | null;
+  @Input() reservationTo: Date | undefined | null;
 
+  constructor(private reservationService: ReservationService, public dialog: MatDialog) {
   }
-
   ngOnInit(): void {
     this.GetReservation();
-
   }
   openDialog() {
     this.dialog.open(ReservationsReportComponent);
@@ -34,6 +31,11 @@ export class GetReservationsComponent implements OnInit {
         this.reservationArr = result;
       }
     );
+  }
+  Clear() {
+    this.reservationFrom = null;
+    this.reservationTo = null;
+    this.GetReservation();
   }
   FilterReservations() {
     const obj = {
@@ -80,5 +82,5 @@ export class GetReservationsComponent implements OnInit {
       }
     )
   }
- 
+
 }

@@ -7,6 +7,7 @@ import { AddTableComponent } from './add-table/add-table.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GetTablesComponent } from './get-tables/get-tables.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     EditTableComponent,
@@ -18,7 +19,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     TableRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatDialogModule
   ],
   exports: [NgxSpinnerModule]
 })

@@ -5,6 +5,9 @@ import { TableServiceService } from 'src/app/services/table-service.service';
 import { TableClass } from 'src/app/shared/table-class.model';
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import { MatDialog } from '@angular/material/dialog';
+import { AddTableComponent } from '../add-table/add-table.component';
+import { EditTableComponent } from '../edit-table/edit-table.component';
 @Component({
   selector: 'app-get-tables',
   templateUrl: './get-tables.component.html',
@@ -16,7 +19,7 @@ export class GetTablesComponent implements OnInit {
   image: any = [];
   path: string = './assets/img/Tables/';
   images: String[] = [];
-  constructor(private tableService: TableServiceService, private router: Router, private spinner: NgxSpinnerService) { }
+  constructor(private tableService: TableServiceService, private router: Router, private spinner: NgxSpinnerService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.GetAllTables();
@@ -36,7 +39,7 @@ export class GetTablesComponent implements OnInit {
     }
   }
   AddTable() {
-    this.router.navigate(['Tables/AddTable']);
+    this.dialog.open(AddTableComponent ,{ width: '1000px' });
   }
   EditTable(id?: number) {
     this.router.navigateByUrl('Tables/EditTable', { state: { id } });
