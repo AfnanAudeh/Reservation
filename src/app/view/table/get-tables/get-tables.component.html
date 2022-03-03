@@ -1,5 +1,9 @@
-<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#bf7207" type="pacman" [fullScreen]="true">
-    <p style="color: white"> Loading... </p>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Loading...</p>
 </ngx-spinner>
 <div class=" content">
     <div class=" row">
@@ -25,13 +29,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let data of tables">
+                                    <tr *ngFor="let data of tables; let i = index">
                                         <td>{{data.table_Id}}</td>
                                         <td>{{data.max_Person}}</td>
                                         <td>{{data.details}}</td>
-                                        <td><img [src]="'./assets/img/Tables/'+data.image_Location" width="150"
+                                        <td><img [src]="images[i]" width="150"
                                                 height="150"></td>
-                                        <td><button mat-button (click)="EditTable(data.table_Id)">Edit</button></td>
+                                        <td><button mat-button (click)="EditTable(data.table_Id)" >Edit</button></td>
                                         <td><button (click)="DeleteTable(data.table_Id)">Delete</button></td>
                                     </tr>
                                 </tbody>

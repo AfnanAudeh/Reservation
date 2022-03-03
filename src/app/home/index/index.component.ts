@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
 import { IndexService } from 'src/app/services/index.service';
 
 @Component({
@@ -12,9 +13,12 @@ export class IndexComponent implements OnInit {
   indexArr?: any = [];
   image: string='./assets/img/Index/';
 
-  constructor(private indexService: IndexService, private router: Router) { }
+  constructor(private indexService: IndexService, private router: Router,
+    private spinner: NgxSpinnerService)
+   { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.indexService.GetHeader().subscribe(
       result => {
         this.headerArr = result;
@@ -24,6 +28,7 @@ export class IndexComponent implements OnInit {
       (result)=>{
         this.indexArr=result
       this.image=this.image+this.indexArr[0].bg_Path;
+      this.spinner.hide();
     }
     );
   }

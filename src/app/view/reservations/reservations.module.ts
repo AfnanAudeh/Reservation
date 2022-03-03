@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReservationsReportComponent } from './reservations-report/reservations-report.component';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ReservationsRoutingModule,
     CommonModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    NgxSpinnerModule
     
   ],
   exports:[

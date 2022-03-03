@@ -1,45 +1,57 @@
-<div  class="dialog-container">
-<h2 mat-dialog-title>Reservations Report</h2>
-<mat-dialog-content class="mat-typography">
-    <label>Report OF Month / Year</label>
-    <input type="month" #FilterReport [(ngModel)]="filterDate">
-    <button type="submit" (click)="ReportFilter()">Filter</button>
-    <button (click)="Clear()" #clear>Clear</button>
-    <button type="button" label="PDF" (click)="DownloadReport()">Generate Report</button>
-    <div class="col-md-12">
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class="col-md-12">
         <div class="card card-plain">
           <div class="card-header">
-            <h4 class="card-title">Reservations</h4>
-          
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table tablesorter">
-                <thead class="text-primary">
-                  <tr>
-                    <th>Table Id</th>
-                    <th>Reservation From</th>
-                    <th>Reservation To</th>
-                    <th>Reservation Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let data of reservationArr let i=index">
-                    <td>{{data.table_Id}}</td>
-                    <td>{{data.reservation_From |date:'short':'IST'}}</td>
-                    <td>{{data.reservation_To |date:'short':'IST'}}</td>
-                    <td>{{data.res_Status}}</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="flex-container">
+              <h2 class="card-title">Reservations Report</h2>
+              <button type="button" label="PDF" (click)="DownloadReport()" class=" btn btn-fill btn-danger" id="report"> Generate
+                Report</button>
+                <button mat-button (click)="backToList()" class=" btn btn-fill btn-danger" id="back"> Back
+                </button>
             </div>
           </div>
         </div>
+        <div class="filter-container">
+          <div class="filter">
+            <h4>Filter :</h4>
+            <label>Report OF Month / Year</label>
+          <input type="month" #FilterReport [(ngModel)]="filterDate">
+          <button type="submit" (click)="ReportFilter()" class=" btn btn-fill btn-danger" id="search">Filter</button>
+          <button (click)="Clear()" class=" btn btn-fill btn-danger" id="search">Clear</button>
+        </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table tablesorter">
+              <thead class="text-primary">
+                <tr>
+                  <th>Table Id</th>
+                  <th>Reservation From</th>
+                  <th>Reservation To</th>
+                  <th>Reservation Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of reportFilteredReservation let i=index">
+                  <td>{{data.table_Id}}</td>
+                  <td>{{data.reservation_From |date:'short':'IST'}}</td>
+                  <td>{{data.reservation_To |date:'short':'IST'}}</td>
+                  <td>{{data.res_Status}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
-</mat-dialog-actions>
-
+    </div>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableServiceService } from 'src/app/services/table-service.service';
 import { TableClass } from 'src/app/shared/table-class.model';
@@ -8,6 +8,7 @@ import 'jspdf-autotable'
 import { MatDialog } from '@angular/material/dialog';
 import { AddTableComponent } from '../add-table/add-table.component';
 import { EditTableComponent } from '../edit-table/edit-table.component';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-get-tables',
   templateUrl: './get-tables.component.html',
@@ -19,11 +20,13 @@ export class GetTablesComponent implements OnInit {
   image: any = [];
   path: string = './assets/img/Tables/';
   images: String[] = [];
-  constructor(private tableService: TableServiceService, private router: Router, private spinner: NgxSpinnerService,public dialog: MatDialog) { }
+  constructor(private tableService: TableServiceService, 
+    private router: Router, private spinner: NgxSpinnerService, public dialog: MatDialog,
+    private route: ActivatedRoute,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.GetAllTables();
-
+    this.spinner.show()
   }
   GetAllTables() {
     this.tableService.GetTables().subscribe(result => {
@@ -39,14 +42,29 @@ export class GetTablesComponent implements OnInit {
     }
   }
   AddTable() {
-    this.dialog.open(AddTableComponent ,{ width: '1000px' });
+    this.router.navigate(['/Tables/AddTable']);
   }
   EditTable(id?: number) {
-    this.router.navigateByUrl('Tables/EditTable', { state: { id } });
+    this.router.navigate(['../EditTable', id], { relativeTo: this.route });
 
   }
   DeleteTable(id?: number) {
-    this.tableService.DeleteTable(id).subscribe();
+    this.tableService.DeleteTable(id).subscribe(
+      (result)=>{
+        if(result==false)
+        {
+          this.toastr.error('Sorry , Table has Reservations')
+        }
+        else
+        {
+          this.toastr.success('Table Deleted Succefully')
+        }
+      },
+      (error)=>{
+        console.log('Do Something');
+        
+      }
+    );
   }
-  
+
 }

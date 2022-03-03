@@ -4,10 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TableRoutingModule } from './table-routing.module';
 import { EditTableComponent } from './edit-table/edit-table.component';
 import { AddTableComponent } from './add-table/add-table.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GetTablesComponent } from './get-tables/get-tables.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     EditTableComponent,
@@ -20,8 +24,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
-    MatDialogModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    ToastrModule.forRoot()
   ],
-  exports: [NgxSpinnerModule]
+  exports: [NgxSpinnerModule],
+  providers:[ToastrService]
 })
 export class TableModule { }

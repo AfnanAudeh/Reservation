@@ -24,14 +24,14 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/GetTable",
+    path: "/Tables/GetTable",
     title: "Resturant Tables",
     rtlTitle: "طاولات المطعم",
     icon: "icon-app",
     class: ""
   },
   {
-    path: "/GetReservations",
+    path: "/reservations/GetReservations",
     title:"Reservations",
     rtlTitle: "",
     icon: "icon-book-bookmark",

@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 @NgModule({
   declarations: [
     TablesComponent,
@@ -27,7 +28,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ReactiveFormsModule,
     MatFormFieldModule,
     FormsModule ,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ToastrModule.forRoot()
   ],
   exports:[ CommonModule,
     ReservationRoutingModule,
@@ -36,9 +38,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ReactiveFormsModule,
     MatFormFieldModule,
     FormsModule,
-    TablesCardsComponent,
-    NgxSpinnerModule
+    TablesCardsComponent
   ],
-    entryComponents:[TableDialogComponent,ReserveDialogComponent]
+    entryComponents:[TableDialogComponent,ReserveDialogComponent],
+    providers:[ToastrService]
 })
 export class ReservationModule { }

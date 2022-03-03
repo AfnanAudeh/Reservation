@@ -14,7 +14,7 @@ const routes: Routes = [
     component:AddTableComponent
   },
   {
-    path:'EditTable',
+    path:'EditTable/:id',
     component:EditTableComponent
   }
 ];

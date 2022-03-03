@@ -1,12 +1,25 @@
-.dialog-container {
-    background-color: #1e1e2d;
-    width: 1000px;
-    display: block;
-    padding: 6px;
-    border-radius: 4px;
-    box-sizing: border-box;
-    overflow: auto;
-    outline: 0;
-    min-height: inherit;
-    max-height: inherit;
+#report{
+    padding: 10px 24px;
+    margin-left: auto;
+}
+div.filter label{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+#search{
+    margin-left: 2px;
+    padding: 5px 9px;
+    margin-bottom: 7px;
+}
+.filter-container{
+    border-top: 1px solid #fd5d93;
+    border-bottom: 1px solid #fd5d93;
+}
+.filter-container h4{
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+.flex-container {
+
+    display: flex;
 }

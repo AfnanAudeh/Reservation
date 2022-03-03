@@ -9,10 +9,9 @@ import { AuthModule } from './auth/auth.module';
 import { AdminDashboardComponent } from './Dashboards/admin-dashboard/admin-dashboard.component';
 import { TableModule } from './view/table/table.module';
 import { AdminLayoutComponent } from './layouts copy/admin-layout/admin-layout.component';
-import { ReservationsModule } from './view/reservations/reservations.module';
 import { CustomersModule } from './view/customers/customers.module';
 import { AboutusComponent } from './view/aboutus/aboutus.component';
-import { ContactusinfoComponent } from './view/contactusinfo/contactusinfo.component';
+
 
 
 
@@ -33,10 +32,6 @@ const routes: Routes = [
   {
     path: '',
     component: IndexComponent
-  },
-  {
-    path:"contactUsInfo",
-    component:ContactusinfoComponent
   },
   {
     path: 'sec',
@@ -129,10 +124,6 @@ const routes: Routes = [
 
   },
   {
-    path: 'Tables',
-    loadChildren: () => TableModule
-  },
-  {
     path: 'admin',
     component: AdminDashboardComponent
   },
@@ -151,10 +142,6 @@ const routes: Routes = [
 
       }
     ]
-  },
-  {
-    path:'reservations',
-    loadChildren:()=>ReservationsModule
   },
   {
     path: "dashboard",

@@ -25,6 +25,7 @@ import { ComponentsModule } from './components/components.module';
 import {NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 import { AdminLayoutComponent } from './layouts copy/admin-layout/admin-layout.component';
 import { CommonModule, DatePipe } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { CommonModule, DatePipe } from '@angular/common';
     MatDialogModule,
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
+    ToastrModule,
     NgxMatNativeDateModule,
     CommonModule
 

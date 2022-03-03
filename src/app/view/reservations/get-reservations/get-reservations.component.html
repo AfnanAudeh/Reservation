@@ -1,3 +1,10 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
 <div class=" content">
   <div class=" row">
     <div class=" col-md-12">
@@ -6,7 +13,7 @@
           <div class="card-header">
             <div class="flex-container">
               <h2 class="card-title">Reservations</h2>
-              <button mat-button (click)="openDialog()" class=" btn btn-fill btn-danger" id="report"> Generate
+              <button mat-button (click)="Generate()" class=" btn btn-fill btn-danger" id="report"> Generate
                 Report</button>
             </div>
           </div>

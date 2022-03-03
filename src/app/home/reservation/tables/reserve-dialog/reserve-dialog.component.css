@@ -3,3 +3,11 @@
     font-size: 25px;
     color: red;
 }
+.form-control[readonly], fieldset[disabled] .form-control {
+    background-color: white;
+    color: black;
+    cursor: not-allowed;
+}
+.form-group .form-control{
+    color:black;
+}

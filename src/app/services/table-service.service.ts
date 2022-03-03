@@ -38,13 +38,13 @@ export class TableServiceService {
     return this.http.post(environment.apiUrl + 'table/AddTable', table);
   }
   UpdateTable(table: any) {
-    this.http.put(environment.apiUrl + "table/UpdateTable", table);
+    return this.http.put(environment.apiUrl + "table/UpdateTable", table);
   }
   DeleteTable(id?: number) {
     return this.http.delete(environment.apiUrl + 'table/DeleteTable/' + id, this.requestOptions);
   }
   GetById(id: number) {
-    return this.http.get(environment.apiUrl + 'table/GetByID/' + id, this.requestOptions);
+    return this.http.get<TableClass>(environment.apiUrl + 'table/GetByID/' + id, this.requestOptions);
   }
 
   FilterByNumberOfChairs(chairs: number) {

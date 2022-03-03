@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { CustomersRoutingModule } from './customers-routing.module';
 import { GetCustomersComponent } from './get-customers/get-customers.component';
 
@@ -11,7 +11,8 @@ import { GetCustomersComponent } from './get-customers/get-customers.component';
   ],
   imports: [
     CommonModule,
-    CustomersRoutingModule
+    CustomersRoutingModule,
+    NgxSpinnerModule
   ]
 })
 export class CustomersModule { }

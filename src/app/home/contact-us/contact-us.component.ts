@@ -1,6 +1,7 @@
 import { Component, OnInit, SecurityContext } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer} from '@angular/platform-browser';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ContactUsServiceService } from 'src/app/services/contact-us-service.service';
 import { ContactusInfoService } from 'src/app/services/contactus-info.service';
 
@@ -21,16 +22,22 @@ export class ContactUsComponent implements OnInit {
     subject:new FormControl('', Validators.required),
     message:new FormControl('', Validators.required)
   });
-  constructor(private contactUsService:ContactUsServiceService,private sanitizer: DomSanitizer,private contactUsInfo :ContactusInfoService) 
+  constructor(private contactUsService:ContactUsServiceService,private contactUsInfo :ContactusInfoService,private spinner: NgxSpinnerService) 
   {
   }
 
   ngOnInit(): void {
+   this.getContactUs();
+  }
+  getContactUs()
+  {
+    this.spinner.show();
     this.contactUsInfo.getContactUsInfo().subscribe(
       (result:any)=>{this.contactUsInfoArr=result
         console.log(result);
+        this.spinner.hide();
       }
-  );
+  ); 
   }
   SendContactUs()
   {

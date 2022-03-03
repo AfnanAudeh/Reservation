@@ -3,6 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ReservationService } from 'src/app/services/reservation.service';
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-reservations-report',
@@ -11,43 +13,50 @@ import 'jspdf-autotable'
 })
 export class ReservationsReportComponent implements OnInit {
   datePipeString: string | null = '';
-  reportFilteredReservation: any []= [];
+  reportFilteredReservation: any[] = [];
   reservationArr: any = [];
   @Input() reservationFrom: Date | undefined;
   @Input() reservationTo: Date | undefined;
-  @Input() filterDate: Date | undefined|null;
-  constructor(private reservationService: ReservationService, private datePipe: DatePipe) {
+  @Input() filterDate: Date | undefined | null;
+  constructor(private reservationService: ReservationService, private datePipe: DatePipe,
+    private router: Router,public spinner: NgxSpinnerService, private route: ActivatedRoute, ) {
   }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.GetReservation();
-    this.reportFilteredReservation=this.reservationArr
+    this.reportFilteredReservation = this.reservationArr
   }
   Clear() {
-    this.filterDate=null;
-    
-    
+    this.spinner.show();
+    this.filterDate = null;
+    this.reportFilteredReservation=this.reservationArr ;
+    this.spinner.hide();
   }
   GetReservation() {
+    this.spinner.show();
     this.reservationService.GetReservation().subscribe(
       result => {
         this.reservationArr = result;
+        this.reportFilteredReservation=result;
+        this.spinner.hide()
       }
     );
   }
   ReportFilter() {
-    let data=this.filterDate;
+    this.spinner.show();
+    this.reportFilteredReservation = [];
+    let data = this.filterDate;
     console.log(data);
-    
+    this.spinner.show();
     for (let i = 0; i < this.reservationArr.length; i++) {
 
       this.datePipeString = this.datePipe.transform(this.reservationArr[i].reservation_From, 'yyyy-MM');
-
       if (this.datePipeString == data) {
         this.reportFilteredReservation.push(this.reservationArr[i]);
       }
-
     }
+    this.spinner.hide();
     console.log(this.reportFilteredReservation);
   }
   DownloadReport() {
@@ -104,5 +113,8 @@ export class ReservationsReportComponent implements OnInit {
 
     window.open(URL.createObjectURL(pdf.output("blob")));
     // pdf.save(title + '.pdf');
+  }
+  backToList(){
+    this.router.navigate(['../GetReservations'], {relativeTo: this.route});
   }
 }

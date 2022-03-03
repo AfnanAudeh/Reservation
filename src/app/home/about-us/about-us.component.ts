@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AboutUsService } from 'src/app/services/about-us.service';
 
 
@@ -8,15 +9,19 @@ import { AboutUsService } from 'src/app/services/about-us.service';
   styleUrls: ['./about-us.component.css']
 })
 export class AboutUsComponent implements OnInit {
-aboutUsArr?:any=[];
-  constructor(private AboutusService:AboutUsService ) { }
+  aboutUsArr?: any = [];
+  constructor(private AboutusService: AboutUsService, public spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.getAboutUs();
+  }
+  getAboutUs() {
+    this.spinner.show();
     this.AboutusService.GetAboutUs().subscribe(
-      result=>{ this.aboutUsArr=result;  
+      result => {
+        this.aboutUsArr = result;
         console.log(this.aboutUsArr);
-          
+        this.spinner.hide();
       });
   }
-
 }

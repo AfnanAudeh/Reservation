@@ -34,7 +34,6 @@ export class ReserveDialogComponent implements OnInit {
       reservation_To: this.ReserveForm.value.reservation_To.toString(),
       res_Status: "PENDING"
     }
-    console.log(obj);
     this.reservationService.ReserveTable(obj).subscribe(
       (result)=>{
         this.isVisible = false;
